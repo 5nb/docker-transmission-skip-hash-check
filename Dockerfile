@@ -1,4 +1,4 @@
-FROM ubuntu:latest as builder
+FROM lsiobase/ubuntu:focal as builder
 
 # set version label
 ARG BUILD_DATE
@@ -71,15 +71,15 @@ RUN \
  rm -rf /transmission-build && \
  echo "**** finish ****"
 
-FROM lsiobase/ubuntu:bionic
+FROM lsiobase/ubuntu:focal
 
 RUN \
  echo "**** install packages ****" && \
  apt update && \
  apt install -qqy \
 	libcurl4 \
-	libevent-2.1-6 \
-	libminiupnpc10 \
+	libevent-2.1-7 \
+	libminiupnpc17 \
 	libnatpmp1 && \
  echo "**** cleanup ****" && \
  apt clean
