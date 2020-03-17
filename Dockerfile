@@ -34,10 +34,12 @@ RUN \
  
  echo "**** download patch ****" && \
  mkdir patches && \
- curl https://raw.githubusercontent.com/TonyRL/docker-transmission-skip-hash-check/master/patches/001-skip-hash-checking.patch \
+ curl https://raw.githubusercontent.com/TonyRL/docker-transmission-skip-hash-check/focal/patches/001-skip-hash-checking.patch \
 	-o patches/001-skip-hash-checking.patch && \
- curl https://raw.githubusercontent.com/TonyRL/docker-transmission-skip-hash-check/master/patches/002-fdlimit.patch \
+ curl https://raw.githubusercontent.com/TonyRL/docker-transmission-skip-hash-check/focal/patches/002-fdlimit.patch \
 	-o patches/002-fdlimit.patch && \
+ curl https://raw.githubusercontent.com/TonyRL/docker-transmission-skip-hash-check/focal/patches/03-random-announce.patch \
+	-o patches/03-random-announce.patch && \
  
  echo "**** apply patch ****" && \
  patch -N -p0 < patches/001-skip-hash-checking.patch && \
