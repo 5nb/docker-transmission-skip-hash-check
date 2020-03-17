@@ -42,6 +42,7 @@ RUN \
  echo "**** apply patch ****" && \
  patch -N -p0 < patches/001-skip-hash-checking.patch && \
  patch -N -p0 < patches/002-fdlimit.patch && \
+ patch -N -p0 < patches/003-random-announce.patch && \
  
  echo "**** setup artifact folder ****" && \
  mkdir build && \
